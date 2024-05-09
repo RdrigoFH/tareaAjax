@@ -13,6 +13,24 @@ body {
  
  h1 {
    text-align: center;
+   color: #262525;
+ }
+
+ #option1, #option2 {
+   margin-bottom: 20px;
+ }
+ 
+ h2 {
+   color: #555;
+ }
+ 
+ select {
+   width: 100%;
+   padding: 10px;
+   margin-top: 5px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #fff;
    color: #333;
  }
  
