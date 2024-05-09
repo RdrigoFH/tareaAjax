@@ -2,26 +2,30 @@ body {
    font-family: Arial, sans-serif;
    margin: 0;
    padding: 0;
-   background-color: #f2f2f2;
+   background-color: #ffffff;
  }
  
  .container {
    max-width: 800px;
    margin: 0 auto;
-   padding: 20px;
+   padding: 10px;
  }
  
  h1 {
    text-align: center;
    color: #262525;
+   margin: 5px;
  }
 
  #option1, #option2 {
    margin-bottom: 20px;
+   padding-right: 150px;
+   padding-left: 150px ;
  }
  
  h2 {
-   color: #555;
+   color: #000000;
+   margin: 0px;
  }
  
  select {
@@ -32,5 +36,16 @@ body {
    border-radius: 5px;
    background-color: #fff;
    color: #333;
+ }
+ #compareBtn {
+   display: block;
+   margin: 0 auto;
+   width: 150px; 
+   padding: 8px; 
+   border: none;
+   border-radius: 25px;
+   background-color: #000000;
+   color: #ffffff;
+   cursor: pointer;
  }
  
