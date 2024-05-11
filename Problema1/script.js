@@ -28,5 +28,34 @@ function crearGrafico(jsonData) {
   var confirmed2 = provinceData2.confirmed.map(function(data) {
     return data.value;
   });
-  
+  dataset.push(confirmed1);
+  dataset.push(confirmed2);
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Confirmed Cases (' + province1 + ')',
+        data: dataset[0],
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }, {
+        label: 'Confirmed Cases (' + province2 + ')',
+        data: dataset[1],
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
 }
