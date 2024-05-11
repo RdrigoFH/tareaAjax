@@ -59,3 +59,8 @@ function crearGrafico(jsonData) {
     }
   });
 }
+document.getElementById("compareBtn").addEventListener("click", function() {
+  cargarJSON(function(response) {
+    crearGrafico(response);
+  });
+});
