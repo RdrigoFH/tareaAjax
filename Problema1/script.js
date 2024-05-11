@@ -9,3 +9,15 @@ function cargarJSON(callback) {
   };
   xhr.send(null);
 }
+
+function crearGrafico(jsonData) {
+  var data = JSON.parse(jsonData);
+
+  var select1 = document.getElementById("provinceSelect1");
+  var select2 = document.getElementById("provinceSelect2");
+  var province1 = select1.options[select1.selectedIndex].value;
+  var province2 = select2.options[select2.selectedIndex].value;
+
+  var provinceData1 = data.find(item => item.region === province1);
+  var provinceData2 = data.find(item => item.region === province2);
+}
