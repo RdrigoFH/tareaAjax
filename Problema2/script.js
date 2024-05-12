@@ -49,7 +49,37 @@ document.addEventListener("DOMContentLoaded", function() {
   
           data.datasets.push(dataset);
         }
+        const ctx = document.getElementById('confirmedChart').getContext('2d');
+     const confirmedChart = new Chart(ctx, {
+       type: 'line',
+       data: data,
+       options: {
+         responsive: true,
+         maintainAspectRatio: false,
+         scales: {
+           xAxes: [{
+             type: 'time',
+             time: {
+               unit: 'day',
+               tooltipFormat: 'MMM DD, YYYY'
+             },
+             scaleLabel: {
+               display: true,
+               labelString: 'Date'
+             }
+           }],
+           yAxes: [{
+             scaleLabel: {
+               display: true,
+               labelString: 'Confirmed Cases'
+             }
+           }]
+         }
+       }
+     });
+
       });
  
    }   
+
 })
