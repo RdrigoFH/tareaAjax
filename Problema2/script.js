@@ -24,5 +24,32 @@ document.addEventListener("DOMContentLoaded", function() {
           });
         }
       });
+      regionsData.forEach(region => {
+        if (region.region !== excludedRegion && region.region !== excludedRegion2) {
+          const dataset = {
+            label: region.region,
+            data: [],
+            borderColor: getRandomColor(),
+            fill: false
+          };
+  
+          data.labels.forEach(label => {
+            const matchingDay = region.confirmed.find(day => {
+              const date = new Date(day.date);
+              const formattedDate = `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`;
+              return formattedDate === label;
+            });
+  
+            if (matchingDay) {
+              dataset.data.push(matchingDay.value);
+            } else {
+              dataset.data.push(0);
+            }
+          });
+  
+          data.datasets.push(dataset);
+        }
+      });
+ 
    }   
 })
